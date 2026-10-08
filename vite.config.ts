@@ -448,6 +448,7 @@ function compareOutputs(actual: string, expected: string): boolean {
 }
 
 export default defineConfig({
+  base: './',
   plugins: [react(), tailwindcss(), localJavaRunnerPlugin()],
   server: {
     port: 55,
