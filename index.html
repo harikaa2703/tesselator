@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#091834" />
+    <meta name="description" content="KMIT DAA Laboratory Portal - TESSELATOR" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <title>Dashboard</title>
+  </head>
+  <body class="bg-[#eceff3] text-[#1e293b] antialiased font-sans overflow-x-hidden min-h-screen select-none">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx?v=latest"></script>
+    <script>
+      // Clear all legacy service worker caches to ensure immediate freshness
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (let reg of registrations) {
+            reg.unregister();
+          }
+        });
+      }
+      if (window.caches) {
+        caches.keys().then((keys) => {
+          keys.forEach((key) => caches.delete(key));
+        });
+      }
+    </script>
+  </body>
+</html>
